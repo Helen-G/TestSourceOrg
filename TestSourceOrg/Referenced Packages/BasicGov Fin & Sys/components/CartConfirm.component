@@ -1,0 +1,101 @@
+<apex:component controller="BGBK.CartConfirmController" access="global" allowDML="true">
+    <apex:attribute name="cart" description="Processed cart record" type="BGBK__Cart__c" required="true" access="global" assignTo="{!c}"/>
+    <apex:attribute name="fees" description="Paid fees" type="MUSW__Fee__c[]" access="global" required="false" assignTo="{!fees2}"/>
+    <apex:attribute name="invoices" description="Paid invoices" type="BGBK__Bill__c[]" access="global" required="false" assignTo="{!invoices2}"/>
+    <apex:attribute name="receipts" description="Receipts" type="MUSW__Receipt__c[]" access="global" required="true"/>
+    <apex:attribute name="totalAmount" description="Total paid amount" type="Decimal" access="global" required="true"/>
+    <apex:attribute name="emailAddress" description="Recipient of the receipt" type="String" required="true" access="global" assignTo="{!email}"/>
+    <apex:attribute name="payment" description="Needed when dealing with payment fields (e.g. P&I)" type="BGBK__Payment__c" required="false" access="global" assignTo="{!pmt}"/>
+    <apex:attribute name="paymentFailed" description="If using payment: did it fail?" type="Boolean" required="false" access="global" assignTo="{!pmtFailed}"/>
+    <apex:attribute name="error" description="Error message from Payment Gateway" type="String" required="false" access="global" assignTo="{!processError}"/>
+    
+    <apex:pageBlock >
+        {!confirmMsg}
+        <br/><br/>
+        
+        <apex:pageBlockSection columns="1" id="t">
+            
+            <!-- GENERAL PROCESS INFO -->
+            <apex:panelGrid columns="2" style="width:300px;">
+                <apex:outputLabel value="Order Status"/>
+                <apex:outputText value="{!processStatus}" id="status"/>
+                
+                <apex:outputLabel value="Applied Payment"/>
+                <apex:outputText value="${0,number,#0.00}" id="amount">
+                    <apex:param value="{!totalAmount}"/>
+                </apex:outputText>
+                
+                <apex:outputLabel value="Contact"/>
+                <apex:outputField value="{!cart.BGBK__Contact__c}" id="contact"/>
+
+                <apex:outputLabel value="Operator" rendered="{!cart.Owner != null}"/>
+                <apex:outputField value="{!cart.Owner.Name}" id="operator" rendered="{!cart.Owner != null}"/>
+                
+                <apex:outputLabel value="Process Date"/>
+                <apex:outputField style="width:200px;" value="{!cart.BGBK__Process_DateTime__c}"/>
+            </apex:panelGrid>
+            
+            <apex:panelGrid columns="2" style="width:300px;">
+                <apex:componentBody />
+            </apex:panelGrid>
+            
+            <!-- PAYMENT DETAILS -->
+            <apex:panelGrid columns="2" style="width:300px;" rendered="{!payment != null}">
+                <apex:repeat value="{!$ObjectType.BGBK__Payment__c.FieldSets.BGBK__Payment_Confirmation}" var="pf">
+                    <apex:outputLabel value="{!pf.label}"/>
+                    <apex:outputField value="{!payment[pf]}"/>
+                </apex:repeat>
+            </apex:panelGrid>
+        </apex:pageBlockSection>
+        
+        <apex:pageBlockSection columns="1" id="c">
+            
+            <!-- RECEIPTS -->
+            <apex:repeat value="{!receipts}" var="r" rendered="{!receipts != null}">
+                <apex:panelGrid columns="2" style="width:300px;">
+                    <apex:outputLabel value="Receipt Number"/>
+                    <apex:outputField value="{!r.Name}"/>
+                
+                    <apex:outputLabel value="Payment"/>
+                    <apex:outputField value="{!r.MUSW__Payment_Method__c}"/>
+
+                    <apex:outputLabel value="Check Number" rendered="{!r.MUSW__Payment_Method__c = 'Check'}"/>
+                    <apex:outputField value="{!r.MUSW__Check_Number__c}" rendered="{!r.MUSW__Payment_Method__c = 'Check'}"/>
+                    
+                    <apex:outputLabel value="Reference Number" rendered="{!r.MUSW__Payment_Method__c = 'Credit Card'}"/>
+                    <apex:outputField value="{!r.MUSW__Payment_Gateway_Transaction_Number__c}" rendered="{!r.MUSW__Payment_Method__c = 'Credit Card'}"/>
+                    
+                    <apex:outputLabel value="Card Number" rendered="{!r.MUSW__Payment_Method__c = 'Credit Card' && r.MUSW__Card_Number__c != null}"/>
+                    <apex:outputField value="{!r.MUSW__Card_Number__c}" rendered="{!r.MUSW__Payment_Method__c = 'Credit Card' && r.MUSW__Card_Number__c != null}"/>
+                    
+                    <apex:outputLabel value="Amount" rendered="{!receipts != null}"/>
+                    <apex:outputField value="{!r.MUSW__Amount_Tendered__c}" rendered="{!receipts != null}"/>
+                </apex:panelGrid>
+                <br/>
+            </apex:repeat>
+            
+            <!-- FEES -->
+            <apex:pageBlockSection columns="1" collapsible="false" title="Fees" rendered="{!fees != null && fees.size > 0}">
+                <apex:pageBlocktable value="{!fees2}" var="f" style="width:100%">
+                   <apex:repeat value="{!feeFields}" var="ff">               
+                        <apex:column style="width:150px;padding-left:0cm;" headerValue="{!ff.label}">
+                            <apex:outputField value="{!f[ff]}" />
+                        </apex:column>
+                    </apex:repeat>              
+                </apex:pageBlocktable>
+            </apex:pageBlockSection>
+            
+            <!-- INVOIES -->
+            <apex:pageBlockSection columns="1" collapsible="false" title="Invoices" rendered="{!invoices != null && invoices.size > 0}">
+                <apex:pageBlocktable value="{!invoices2}" var="i" style="width:100%">
+                   <apex:repeat value="{!invoiceFields}" var="ff">               
+                        <apex:column style="width:150px;padding-left:0cm;" headerValue="{!ff.label}">
+                            <apex:outputField value="{!i[ff]}" />
+                        </apex:column>
+                    </apex:repeat>              
+                </apex:pageBlocktable>
+            </apex:pageBlockSection>
+            
+        </apex:pageBlockSection>        
+    </apex:pageBlock> 
+</apex:component>

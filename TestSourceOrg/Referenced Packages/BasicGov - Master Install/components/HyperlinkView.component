@@ -1,0 +1,10 @@
+<apex:component access="global" controller="MUSW.HyperlinkViewController">
+    <apex:attribute access="global" name="content" type="String" description="Content of the formula field" 
+        assignTo="{!htmlLink}"/>
+    
+    <!-- The delimiter defined here must match the one inside the Controller -->
+    <apex:variable var="delim" value="##@"/>
+    <apex:variable var="indDelim" value="{!FIND(delim, htmlLink)}"/>
+   
+    <apex:outputLink value="{!LEFT(htmlLink, indDelim-1)}" target="_top">{!RIGHT(htmlLink, LEN(htmlLink)+1-indDelim-LEN(delim))}</apex:outputLink>
+</apex:component>

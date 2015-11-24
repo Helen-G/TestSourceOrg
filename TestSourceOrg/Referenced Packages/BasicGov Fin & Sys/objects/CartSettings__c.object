@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Cart Settings</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Allow_Existing_Receipt__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Allow user to choose from existing Receipts as method of payment</description>
+        <externalId>false</externalId>
+        <label>Allow Paying with Existing Receipt</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Allow_Multiple_Payment_Methods__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Allow user to pay outstanding amount using multiple payment methods</description>
+        <externalId>false</externalId>
+        <label>Allow Multiple Payment Methods</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Allow_Partial_Payments__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Allow partial payments for amounts outstanding. Not applicable to Portal users.</description>
+        <externalId>false</externalId>
+        <label>Allow Partial Payments</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Cart_Expiration_Hours__c</fullName>
+        <defaultValue>60</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The duration in hours for which the cart will be active.</description>
+        <externalId>false</externalId>
+        <label>Manual Cart Expiration Hours</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payable_Parents__c</fullName>
+        <deprecated>false</deprecated>
+        <description>List of object API names whose Fees can be paid (e.g. Lien__c, Obj1__c). Super parents and Invoices need not be included.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>List of object API names whose Fees can be paid (e.g. Lien__c, Obj1__c). Super parents and Invoices need not be included.</inlineHelpText>
+        <label>Payable Parents</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Gateway_Credentials__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Credentials for communication with Payment Gateway.</description>
+        <externalId>false</externalId>
+        <label>Payment Gateway Credentials</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Gateway_Data_Encryption_Key__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Needs to be 16 characters long. Otherwise will throw error.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Needs to be 16 characters long. Otherwise will throw error. Example can be &apos;BasicGovPayments&apos;</inlineHelpText>
+        <label>Payment Gateway Data Encryption Key</label>
+        <length>16</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payment_Gateway_Form_Post_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>URL For form post to external payment gateway</description>
+        <externalId>false</externalId>
+        <label>Payment Gateway Form Post URL</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Gateway_Requires_Authentication__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates whether gateway requires authentication.</description>
+        <externalId>false</externalId>
+        <label>Payment Gateway Requires Authentication</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Gateway_Requires_Credentials__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Payment Gateway Requires Credentials</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Gateway_Requires_Initialization__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates whether payment gateway requires authentication.</description>
+        <externalId>false</externalId>
+        <label>Payment Gateway Requires Initialization</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Gateway_Response_Protocol__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field defines how the payment gateway communicates with BasicGov</description>
+        <externalId>false</externalId>
+        <label>Payment Gateway Response Protocol</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <label>Cart Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>
