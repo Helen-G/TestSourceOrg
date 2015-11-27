@@ -7,7 +7,7 @@ public with sharing class CartController
     public MUSW__Receipt__c[] rs { get; set; } // public for CartConfirm
     public MUSW__Fee__c[] fees { get; private set; } // public for CartConfirm
     public BGBK__Bill__c[] invoices { get; private set; } // public for CartConfirm
-    public MUSW__Receipt__c[] Zebra2 { get; set; } // public for CartConfirm
+    public MUSW__Receipt__c[] Zebra { get; set; } // public for CartConfirm
     public Account a { get; set; }
     public Contact con { get; set; }
     public Id m_reconcileOriginalContact;
