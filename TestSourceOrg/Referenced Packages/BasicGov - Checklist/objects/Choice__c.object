@@ -61,7 +61,7 @@
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
-        <label>Answer Type</label>
+        <label>Option</label>
         <referenceTo>Answer_Type__c</referenceTo>
         <relationshipLabel>Choices</relationshipLabel>
         <relationshipName>Choices</relationshipName>

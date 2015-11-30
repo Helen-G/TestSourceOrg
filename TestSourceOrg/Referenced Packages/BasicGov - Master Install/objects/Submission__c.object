@@ -357,6 +357,6 @@
         <openType>sidebar</openType>
         <protected>false</protected>
         <requireRowSelection>false</requireRowSelection>
-        <url>/apex/SubmissionsManage?pid={!Permit2__c.Id}{!Application2__c.Id}</url>
+        <url>/apex/MUSW__SubmissionsManage?pid={!Permit2__c.Id}{!Application2__c.Id}{!License2__c.Id}</url>
     </webLinks>
 </CustomObject>

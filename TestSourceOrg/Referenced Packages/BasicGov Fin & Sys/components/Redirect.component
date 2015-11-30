@@ -1,0 +1,4 @@
+<apex:component controller="BGBK.NotifyController" access="global">
+    <apex:attribute name="recordIds" type="String" description="List of comma-delimited record Ids" access="global" required="false"/>
+    <c:Notify recordIds="{!IF(recordIds != null, recordIds, $CurrentPage.parameters.id)}"/>
+</apex:component>

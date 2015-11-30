@@ -64,6 +64,7 @@
         <members>LightBox</members>
         <members>Notify</members>
         <members>ProgressBar</members>
+        <members>Redirect</members>
         <name>ApexComponent</name>
     </types>
     <types>

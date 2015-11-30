@@ -8,9 +8,10 @@
 		<script src="/js/setup.js" type="text/javascript"></script>
 	    <script src="/soap/ajax/8.0/connection.js"></script>
 		<script src="/jslibrary/0/sfdc/SfdcCore.js" type="text/javascript"></script>
+		<script src="/jslibrary/1445535098000/sfdc/main.js"></script>
 		{!INCLUDE($SControl.lgmCommon)}
 		<script id="clientEventHandlersJS" language="javascript">
-<!-- 
+
 	var uInfo;
 	var dformat; 
 	var tformat = " hh:mm a";
@@ -88,7 +89,7 @@
 		
 		sqlRuleSort = " order by Id";
 		
-		var results = sforce.connection.query("Select Id, MUSW__Type__c, MUSW__Fee_Paid__c, CreatedById, CreatedDate, MUSW__Amount__c, MUSW__Outstanding_Fee__c, MUSW__Amount_Paid__c from MUSW__Fee__c where " + sqlModule + sqlRuleSort);
+		var results = sforce.connection.query("Select Id, MUSW__Type__c, MUSW__Fee_Paid__c, CreatedById, CreatedDate, MUSW__Amount__c, MUSW__Paid_By__c,MUSW__Outstanding_Fee__c, MUSW__Amount_Paid__c from MUSW__Fee__c where " + sqlModule + sqlRuleSort);
 		var fees2 = results.getArray("records");
 		
 		var table = document.getElementById("contentTable").getElementsByTagName("TBODY")[0];
@@ -760,14 +761,17 @@
 												<TD><input type="hidden" name="feePaidBy_lkid" id="feePaidBy_lkid" value="000000000000000">
 													<input type="hidden" name="feePaidBy_lkold" id="feePaidBy_lkold" value="null">
 													<input type="hidden" name="feePaidBy_lktp" id="feePaidBy_lktp" value="003">
-													<input type="hidden" name="feePaidBy_lspf" id="feePaidBy_lspf" value="0">
-													<input type="hidden" name="feePaidBy_mod" id="feePaidBy_mod" value="0">
-													<span style = "padding:2px 10px 2px 0px; text-align:left; font-size: 8pt; color:#333;">
-														<input  tabindex="5" maxlength="80" type="text" readonly="true" onchange="document.getElementById('feePaidBy_lkid').value='';document.getElementById('feePaidBy_mod').value='1';" id="feePaidBy" size="20" name="feePaidBy">
-														<a href="JavaScript: openLookup('/_ui/common/data/LookupPage?lknm=feePaidBy&lkfm=editPage&lktp=' + document.getElementById('feePaidBy_lktp').value,670,document.getElementById('feePaidBy_mod').value,'&lksrch=' + escapeUTF(document.getElementById('feePaidBy').value),'maxw')" tabindex="6" title="Fee Paid By Lookup (New Window)" onclick="setLastMousePosition(event)" id="feePaidBy_lkwgt">
+
+<input type="hidden" name="feePaidBy_lspf" id="feePaidBy_lspf" value="0">
+<input type="hidden" name="feePaidBy_lspfsub" id="feePaidBy_lspfsub" value="0" >													
+													
+<input type="hidden" name="feePaidBy_mod" id="feePaidBy_mod" value="0">
+																										<span style = "padding:2px 10px 2px 0px; text-align:left; font-size: 8pt; color:#333;">
+<input autocomplete="on"  tabindex="5" maxlength="80" type="text" readonly="true" onchange="document.getElementById('feePaidBy_lkid').value='';document.getElementById('feePaidBy_mod').value='1';" id="feePaidBy" size="20" name="feePaidBy" >
+														<a href="JavaScript: openLookup('/_ui/common/data/LookupPage?lknm=feePaidBy&lkfm=editPage&lkrf=&sn=1&lktp=' + document.getElementById('feePaidBy_lktp').value,670,document.getElementById('feePaidBy_mod').value,'&lksrch=' + escapeUTF(document.getElementById('feePaidBy').value),'maxw')" tabindex="6" title="Fee Paid By Lookup (New Window)" onclick="setLastMousePosition(event)" id="feePaidBy_lkwgt">
 															<img src="/s.gif" alt="Fee Paid By Lookup (New Window)"  class="lookupPopup">
 														</a>
-													</span>
+</span>
 												</TD>
 												<TD style = "padding:2px 10px 2px 2px; text-align:right; font-size: 8pt; font-weight: bold; color:#333;">Comments</TD>
 												<TD>

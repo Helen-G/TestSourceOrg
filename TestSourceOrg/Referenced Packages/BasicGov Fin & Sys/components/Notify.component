@@ -34,10 +34,19 @@
             <br/><br/>
             <apex:repeat value="{!results}" var="r">
                 <apex:repeat value="{!r.Notifications}" var="n">
-                    <apex:outputLink value="/{!r.Sobject.Id}" rendered="{!!CONTAINS(r.Sobject.Id, $CurrentPage.Parameters.id)}">{!r.Label} {!r.Sobject['Name']}</apex:outputLink>
-                    <apex:outputText rendered="{!CONTAINS(r.Sobject.Id, $CurrentPage.Parameters.id)}">{!r.Label} {!r.Sobject['Name']}</apex:outputText>
-                    : {!n.notification}
-                    <br/>
+                
+                    <!-- SHOW NOTIFICATION -->
+                    <apex:outputPanel rendered="{!n.notificationType_Str != 'REDIRECT'}">
+                        <apex:outputLink value="/{!r.Sobject.Id}" rendered="{!!CONTAINS(r.Sobject.Id, $CurrentPage.Parameters.id)}">{!r.Label} {!r.Sobject['Name']}</apex:outputLink>
+                        <apex:outputText rendered="{!CONTAINS(r.Sobject.Id, $CurrentPage.Parameters.id)}">{!r.Label} {!r.Sobject['Name']}</apex:outputText>
+                        : {!n.notification}
+                        <br/>
+                    </apex:outputPanel>
+                    
+                    <!-- REDIRECT -->
+                    <apex:outputPanel rendered="{!n.notificationType_Str = 'REDIRECT'}">
+                        <script>window.location = "{!n.notification}";</script>
+                    </apex:outputPanel>
                 </apex:repeat>
             </apex:repeat>
         </div>

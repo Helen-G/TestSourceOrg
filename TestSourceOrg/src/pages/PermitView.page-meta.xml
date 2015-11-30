@@ -6,12 +6,12 @@
     <label>PermitView</label>
     <packageVersions>
         <majorNumber>2</majorNumber>
-        <minorNumber>47</minorNumber>
+        <minorNumber>58</minorNumber>
         <namespace>BGBK</namespace>
     </packageVersions>
     <packageVersions>
         <majorNumber>1</majorNumber>
-        <minorNumber>338</minorNumber>
+        <minorNumber>346</minorNumber>
         <namespace>MUSW</namespace>
     </packageVersions>
 </ApexPage>

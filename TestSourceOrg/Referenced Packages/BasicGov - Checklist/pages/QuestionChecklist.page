@@ -86,12 +86,12 @@
                                 <!--display answer mode-->
 
                                 <apex:outputText value="{!subQ.selectedAnswer}" rendered="{!(subQ.selectedAnswer!=null && subQ.answer.Name!=null && subQ.isSubCriteriaPassed)}"/>
-                                <apex:repeat value="{!subQ.selectedAnswers}" var="answer" rendered="{!(subQ.selectedAnswers.size>0 && subQ.answer.Name!=null && subQ.isSubCriteriaPassed)  }">
+                                <apex:repeat value="{!subQ.selectedAnswers}" var="answer" rendered="{!(subQ.selectedAnswers.size>0 && subQ.answer.Name!=null && subQ.isSubCriteriaPassed )  }">
                                     <apex:outputText value="{!answer}" />
                                     <apex:outputText value=" "/>
                                 </apex:repeat>
 
-                                <apex:outputText value="{!subQ.conditionalAnswer}" rendered="{!subQ.conditionalAnswer !=null && subQ.answer.Name!=null && subQ.isSubCriteriaPassed}"/>
+                                <apex:outputText value="{!subQ.conditionalAnswer}" rendered="{!subQ.conditionalAnswer !=null && subQ.answer.Name!=null && subQ.isSubCriteriaPassed }"/>
                                 <apex:outputText value=" " rendered="{!subQ.question.Id != currentQId}"/>
                             </apex:column>
                              <apex:column style="width:70%;vertical-align:top;">

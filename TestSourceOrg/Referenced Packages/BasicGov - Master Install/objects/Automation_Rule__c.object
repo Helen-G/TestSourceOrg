@@ -316,6 +316,8 @@ If no order specified, then rule does not have a dependency and can run last</de
         <columns>Filter_Table_Index__c</columns>
         <columns>Result_Table_Index__c</columns>
         <columns>Active__c</columns>
+        <columns>Effective_Date__c</columns>
+        <columns>End_Date__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>

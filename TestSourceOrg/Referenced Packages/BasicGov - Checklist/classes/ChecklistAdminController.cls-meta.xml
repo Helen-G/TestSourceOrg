@@ -3,7 +3,7 @@
     <apiVersion>27.0</apiVersion>
     <packageVersions>
         <majorNumber>1</majorNumber>
-        <minorNumber>1</minorNumber>
+        <minorNumber>7</minorNumber>
         <namespace>BGCM</namespace>
     </packageVersions>
     <status>Active</status>

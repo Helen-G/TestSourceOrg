@@ -3,6 +3,11 @@
     <apiVersion>27.0</apiVersion>
     <packageVersions>
         <majorNumber>1</majorNumber>
+        <minorNumber>22</minorNumber>
+        <namespace>BGCM</namespace>
+    </packageVersions>
+    <packageVersions>
+        <majorNumber>1</majorNumber>
         <minorNumber>178</minorNumber>
         <namespace>MUSW</namespace>
     </packageVersions>

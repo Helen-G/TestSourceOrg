@@ -24,6 +24,7 @@
         <members>Answer_Type__c.Order__c</members>
         <members>Answer_Type__c.Tip__c</members>
         <members>Answer_Type__c.Track_No__c</members>
+        <members>Answer__c.Actual_Value__c</members>
         <members>Answer__c.Case__c</members>
         <members>Answer__c.Comments__c</members>
         <members>Answer__c.Question__c</members>

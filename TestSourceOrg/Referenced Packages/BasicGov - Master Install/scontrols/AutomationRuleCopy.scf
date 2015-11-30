@@ -153,20 +153,30 @@ function getFields(sobject, action) {
 	switch(action) 
 	{
 		case "update": { fieldList = "Id, ";
-						for (var i=0; i<fields.length; i++) {
-							if (fields[i].updateable == true || fields[i].updateable == "true") {
-								fieldList = fieldList + fields[i].name + ", ";
+						for (var i=0; i<fields.length; i++) 
+						{
+							if (fields[i].updateable == true || fields[i].updateable == "true") 
+							{
+								if (fields[i].name.substring(0, 6) == "MUSW__")
+									fieldList = fieldList + fields[i].name + ", ";
 							}
-						} break; }
-		case "create": 	{ for (var i=0; i<fields.length; i++) {
-							if (fields[i].updateable == true || fields[i].updateable == "true") {
-								fieldList = fieldList + fields[i].name + ", ";
+						} 
+						break; }
+		case "create": 	{ for (var i=0; i<fields.length; i++) 
+		{
+							if (fields[i].updateable == true || fields[i].updateable == "true") 
+							{
+								if (fields[i].name.substring(0, 6) == "MUSW__")
+									fieldList = fieldList + fields[i].name + ", ";
 							}
-						} break; }
+						} 
+						break; }
 		default: 	{ 	for (var i=0; i<fields.length; i++)
 		    			{
-							fieldList = fieldList + fields[i].name + ", ";
-						} break; }
+							if (fields[i].name.substring(0, 6) == "MUSW__")
+								fieldList = fieldList + fields[i].name + ", ";
+						} 
+						break; }
 	}
 	
 	//chop off last comma

@@ -89,8 +89,10 @@
     <fields>
         <fullName>Actual_Value__c</fullName>
         <deprecated>false</deprecated>
+        <description>1. In checklist admin page, set actual value in Answer Type is required. 
+2. In Question Checklist page,  when saving answer record, save this actual value to the answer record.</description>
         <externalId>false</externalId>
-        <label>Actual Value</label>
+        <label>Displayed Value</label>
         <length>255</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -144,7 +146,7 @@
         <type>Text</type>
         <unique>true</unique>
     </fields>
-    <label>Answer Type</label>
+    <label>Option</label>
     <listViews>
         <fullName>All</fullName>
         <columns>NAME</columns>
@@ -154,10 +156,10 @@
         <label>All</label>
     </listViews>
     <nameField>
-        <label>Value</label>
+        <label>Internal Value</label>
         <type>Text</type>
     </nameField>
-    <pluralLabel>Answer Types</pluralLabel>
+    <pluralLabel>Options</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
 </CustomObject>
