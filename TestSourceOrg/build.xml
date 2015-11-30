@@ -126,6 +126,13 @@
       <sf:describeMetadata username="${sf.source.username}" password="${sf.source.password}" serverurl="${sf.source.serverurl}"/>
     </target>
 	
+	<!-- Run local unit tests in source -->
+	<!-- unpackaged folder is empty except for package.xml, so will not deploy anything -->
+	<!-- Alternate: testLevel="RunAllTestsInOrg" -->
+    <target name="runLocalTests">
+      <sf:deploy testLevel="RunLocalTests" username="${sf.source.username}" password="${sf.source.password}" serverUrl="${sf.source.serverurl}" deployRoot="runTests" />
+    </target>
+	
 	<target name="replacePackageVersion">
 		<xmltask todir="readyUnpackaged">
 			<fileset dir=".">
