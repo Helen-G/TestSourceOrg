@@ -26,7 +26,7 @@
                 </apex:outputText>
                 
                 <apex:outputLabel value="Contact"/>
-                <apex:outputField value="{!cart.BGBK__Contact__c}" id="contact"/>
+                <apex:outputField value="{!cart.Contact__r.Name}" id="contact"/>
 
                 <apex:outputLabel value="Operator" rendered="{!cart.Owner != null}"/>
                 <apex:outputField value="{!cart.Owner.Name}" id="operator" rendered="{!cart.Owner != null}"/>

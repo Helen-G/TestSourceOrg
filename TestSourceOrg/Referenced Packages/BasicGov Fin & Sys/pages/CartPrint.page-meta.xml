@@ -5,13 +5,13 @@
     <confirmationTokenRequired>false</confirmationTokenRequired>
     <label>CartPrint</label>
     <packageVersions>
-        <majorNumber>1</majorNumber>
-        <minorNumber>12</minorNumber>
+        <majorNumber>2</majorNumber>
+        <minorNumber>16</minorNumber>
         <namespace>BGCM</namespace>
     </packageVersions>
     <packageVersions>
         <majorNumber>1</majorNumber>
-        <minorNumber>293</minorNumber>
+        <minorNumber>345</minorNumber>
         <namespace>MUSW</namespace>
     </packageVersions>
 </ApexPage>
