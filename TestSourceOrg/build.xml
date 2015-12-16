@@ -1,0 +1,218 @@
+<project name="Sample usage of Salesforce Ant tasks" default="test" basedir="." xmlns:sf="antlib:com.salesforce">
+
+    <property file="build.properties"/>
+    <property environment="env"/>
+
+    <taskdef resource="com/salesforce/antlib.xml" uri="antlib:com.salesforce">
+        <classpath>
+            <pathelement location="../ant-salesforce.jar" />
+        </classpath>
+    </taskdef>
+	
+	<taskdef name="xmltask" classname="com.oopsconsultancy.xmltask.ant.XmlTask" />
+
+    <!-- Test out deploy and retrieve verbs for package 'mypkg' -->
+    <target name="test">
+      <!-- Upload the contents of the "mypkg" package -->
+      <sf:deploy username="${sf.dest.username}" password="${sf.dest.password}" serverurl="${sf.dest.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="mypkg" rollbackOnError="true"/>
+      <mkdir dir="retrieveOutput"/>
+      <!-- Retrieve the contents into another directory -->
+      <sf:retrieve username="${sf.dest.username}" password="${sf.dest.password}" serverurl="${sf.dest.serverurl}" maxPoll="${sf.maxPoll}" retrieveTarget="retrieveOutput" packageNames="MyPkg"/>
+    </target>
+
+    <!-- Retrieve an unpackaged set of metadata from your org -->
+    <!-- The file unpackaged/package.xml lists what is to be retrieved -->
+    <target name="retrieveUnpackaged">
+	  <delete dir="retrieveUnpackaged"/><!--remove dir and all old contents-->
+      <mkdir dir="retrieveUnpackaged"/>
+      <!-- Retrieve the contents into another directory -->
+      <sf:retrieve username="${sf.source.username}" password="${sf.source.password}" serverurl="${sf.source.serverurl}" maxPoll="${sf.maxPoll}" pollWaitMillis="${sf.pollWaitMillis}"  retrieveTarget="retrieveUnpackaged" unpackaged="unpackaged/package.xml"/>
+    </target>
+	
+	<!--same as retrieveUnpackaged except loads custom objects, approvals, permissions only-->
+	<target name="retrieveUnpackaged1">
+	  <delete dir="retrieveUnpackaged"/><!--remove dir and all old contents-->
+      <mkdir dir="retrieveUnpackaged"/>
+      <!-- Retrieve the contents into another directory -->
+      <sf:retrieve username="${sf.source.username}" password="${sf.source.password}" serverurl="${sf.source.serverurl}" maxPoll="${sf.maxPoll}" pollWaitMillis="${sf.pollWaitMillis}"  retrieveTarget="retrieveUnpackaged" unpackaged="unpackaged/package1.xml"/>
+    </target>
+	
+	<!--same as retrieveUnpackaged except loads custom objects dependents only-->
+	<target name="retrieveUnpackaged2">
+	  <delete dir="retrieveUnpackaged"/><!--remove dir and all old contents-->
+      <mkdir dir="retrieveUnpackaged"/>
+      <!-- Retrieve the contents into another directory -->
+      <sf:retrieve username="${sf.source.username}" password="${sf.source.password}" serverurl="${sf.source.serverurl}" maxPoll="${sf.maxPoll}" pollWaitMillis="${sf.pollWaitMillis}"  retrieveTarget="retrieveUnpackaged" unpackaged="unpackaged/package2.xml"/>
+    </target>
+	
+    <!-- Retrieve all the items of a particular metadata type -->
+    <target name="bulkRetrieve">
+      <sf:bulkRetrieve username="${sf.source.username}" password="${sf.source.password}" serverurl="${sf.source.serverurl}" maxPoll="${sf.maxPoll}" metadataType="${sf.source.metadataType}" retrieveTarget="retrieveUnpackaged"/>
+    </target>
+
+    <!-- Retrieve metadata for all the packages specified under packageNames -->
+    <target name="retrievePkg">
+	  <mkdir dir="retrievePackaged"/>
+      <sf:retrieve username="${sf.source.username}" password="${sf.source.password}" serverurl="${sf.source.serverurl}" maxPoll="${sf.maxPoll}" retrieveTarget="retrievePackaged" packageNames="${sf.source.pkgName}"/>
+    </target>
+
+    <!-- Deploy the unpackaged set of metadata retrieved with retrieveUnpackaged -->
+    <target name="deployUnpackaged">
+      <sf:deploy username="${sf.dest.username}" password="${sf.dest.password}" serverurl="${sf.dest.serverurl}" maxPoll="${sf.maxPoll}" pollWaitMillis="${sf.pollWaitMillis}"  deployRoot="src" rollbackOnError="true"/>
+    </target>
+
+    <!-- Deploy a zip of metadata files to the org -->
+    <target name="deployZip">
+      <sf:deploy username="${sf.dest.username}" password="${sf.dest.password}" serverurl="${sf.dest.serverurl}" maxPoll="${sf.maxPoll}" zipFile="${sf.dest.zipFile}" pollWaitMillis="1000" rollbackOnError="true"/>
+    </target>
+
+    <!-- Shows deploying code & running tests for code in directory -->
+    <target name="deployCode">
+      <!-- Upload the contents of the "codepkg" directory, running the tests for just 1 class -->
+      <sf:deploy username="${sf.dest.username}" password="${sf.dest.password}" serverurl="${sf.dest.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="codepkg" rollbackOnError="true">
+        <runTest>SampleDeployClass</runTest>
+      </sf:deploy>
+    </target>
+	
+	<target name="installdev0">
+      <!-- install managed packaging having a namespace BGCM -->
+      <sf:installPackage namespace="BGCM" version="2.09" packagePassword="CCC15" username="${sf.dest.username}" password="${sf.dest.password}" serverurl="${sf.dest.serverurl}" maxPoll="${sf.maxPoll}" />
+    </target>
+	
+	<target name="installdev1">
+      <!-- install managed packaging having a namespace MUSW -->
+      <sf:installPackage namespace="MUSW" version="1.332" packagePassword="CCC15" username="${sf.dest.username}" password="${sf.dest.password}" serverurl="${sf.dest.serverurl}" maxPoll="${sf.maxPoll}" />
+    </target>
+	
+	<target name="installdev2">
+      <!-- install managed packaging having a namespace BGBK -->
+      <sf:installPackage namespace="BGBK" version="2.27" packagePassword="CCC15" username="${sf.dest.username}" password="${sf.dest.password}" serverurl="${sf.dest.serverurl}" maxPoll="${sf.maxPoll}" />
+    </target>
+	
+	<target name="installdev3">
+      <!-- install managed packaging having a namespace BGCK (checklist) -->
+      <sf:installPackage namespace="BCCK" version="1.8" packagePassword="CCC15" username="${sf.dest.username}" password="${sf.dest.password}" serverurl="${sf.dest.serverurl}" maxPoll="${sf.maxPoll}" />
+    </target>
+
+    <!-- Shows removing code; only succeeds if done after deployCode -->
+    <target name="undeployCode">
+      <sf:deploy username="${sf.dest.username}" password="${sf.dest.password}" serverurl="${sf.dest.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="removecodepkg"/>
+    </target>
+
+    <!-- Shows retrieving code; only succeeds if done after deployCode -->
+    <target name="retrieveCode">
+      <!-- Retrieve the contents listed in the file codepkg/package.xml into the codepkg directory -->
+      <sf:retrieve username="${sf.source.username}" password="${sf.source.password}" serverurl="${sf.source.serverurl}" maxPoll="${sf.maxPoll}" retrieveTarget="codepkg" unpackaged="codepkg/package.xml"/>
+    </target>
+
+    <!-- Shows deploying code, running all tests, and running tests (1 of which fails), and logging. -->
+    <target name="deployCodeFailingTest">
+      <!-- Upload the contents of the "codepkg" package, running all tests -->
+      <sf:deploy username="${sf.dest.username}" password="${sf.dest.password}" serverurl="${sf.dest.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="codepkg" runAllTests="true" rollbackOnError="true" logType="Debugonly"/>
+    </target>
+
+    <!-- Shows check only; never actually saves to the server -->
+    <target name="deployCodeCheckOnly">
+      <sf:deploy username="${sf.dest.username}" password="${sf.dest.password}" serverurl="${sf.dest.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="codepkg" checkOnly="true"/>
+    </target>
+
+	<!-- Retrieve the information of all items of a particular metadata type -->
+    <target name="listMetadata">
+      <sf:listMetadata username="${sf.source.username}" password="${sf.source.password}" serverurl="${sf.source.serverurl}" metadataType="${sf.source.metadataType}"/>
+    </target>
+
+	<!-- Retrieve the information on all supported metadata type -->
+    <target name="describeMetadata">
+      <sf:describeMetadata username="${sf.source.username}" password="${sf.source.password}" serverurl="${sf.source.serverurl}"/>
+    </target>
+	
+	<!-- Run local unit tests in source -->
+	<!-- unpackaged folder is empty except for package.xml, so will not deploy anything -->
+	<!-- Alternate: testLevel="RunAllTestsInOrg" -->
+    <target name="runLocalTests">
+      <sf:deploy testLevel="RunLocalTests" username="${sf.source.username}" password="${sf.source.password}" serverUrl="${sf.source.serverurl}" deployRoot="runTests" />
+    </target>
+	
+	<target name="replacePackageVersion">
+		<xmltask todir="readyUnpackaged">
+			<fileset dir=".">
+				<include name="*.page-meta.xml"/>
+			</fileset>	
+			<replace 
+				path="//:packageVersions[starts-with(:namespace/text(), 'prefix3__')]/:minorNumber/text()" 
+				withText="${correctMinorNumber}"
+			/>
+		</xmltask>
+	</target>	
+	
+	<target name="removeStandardSF" ><!--remove troublesome SF components brought in by wildcards-->
+		<delete file="retrieveUnpackaged/workflows/SocialPost.workflow" />
+		<delete file="retrieveUnpackaged/workflows/Question.workflow" />
+		<delete file="retrieveUnpackaged/workflows/Reply.workflow" />
+		<delete file="retrieveUnpackaged/workflows/SignupRequest.workflow" />
+		<delete file="retrieveUnpackaged/workflows/UserProvisioningRequest.workflow" />
+		<delete file="retrieveUnpackaged/workflows/Event.workflow" />
+		<delete file="retrieveUnpackaged/workflows/ExternalEventMapping.workflow" />
+		<delete file="retrieveUnpackaged/workflows/SocialPersona.workflow" />
+		<delete file="retrieveUnpackaged/applications/standard__AllTabSet.app" />
+		<delete file="retrieveUnpackaged/layouts/Contract-Contract Layout.layout" />
+		<delete file="retrieveUnpackaged/layouts/SignupRequest-Signup Request Layout.layout" />
+		<delete file="retrieveUnpackaged/layouts/FeedItem-Feed Item Layout.layout" />
+		<delete file="retrieveUnpackaged/layouts/Lead-Lead Layout.layout" />
+		<delete file="retrieveUnpackaged/layouts/CaseInteraction-Case Feed Layout.layout" />
+		<delete file="retrieveUnpackaged/profiles/ContractManager.profile" />
+		<delete file="retrieveUnpackaged/profiles/MarketingProfile.profile" />
+		<delete file="retrieveUnpackaged/profiles/ReadOnly.profile" />
+		<delete file="retrieveUnpackaged/profiles/SolutionManager.profile" />
+		<delete file="retrieveUnpackaged/profiles/StandardAul.profile" />
+	</target>
+	
+	<target name="removeDeprecatedBG" ><!--remove deprecated BG components brought in by wildcards-->
+		<xmltask todir="retrieveUnpackaged/objects">
+			<fileset dir="retrieveUnpackaged/objects">
+				<include name="MUSW__Binder__c.object"/>
+				<include name="MUSW__Receipt__c.object"/>
+			</fileset>
+			<remove path="//:listViews" />
+		</xmltask>
+	</target>
+	
+	<target name="removeProfilePerms" >
+		<xmltask todir="retrieveUnpackaged/profiles">
+			<fileset dir="retrieveUnpackaged/profiles">
+				<include name="*.profile"/>
+			</fileset>
+			<remove path="//:userPermissions" />
+			<remove path="//:layoutAssignments" /> <!--[layout='FeedItem-Feed Item Layout']-->
+			<remove path="//:allowDelete" /> <!--MUSW__Binder_item__c-->
+			<remove path="//:objectPermissions[object='MUSW__Binder_Item__c']" /><!--manually delete objectpermission node for Binder_Item for now for Admin, ReadOnly & Standard profiles-->
+		</xmltask>
+	</target>	
+	
+	<target name="removePackageVersion" >
+		<xmltask todir="retrieveUnpackaged/pages">
+			<fileset dir="retrieveUnpackaged/pages">
+				<include name="*meta.xml"/>
+			</fileset>
+			<remove 
+				path="//:packageVersions" 
+			/>
+		</xmltask>
+		<xmltask todir="retrieveUnpackaged/classes" >
+			<fileset dir="retrieveUnpackaged/classes">
+				<include name="*meta.xml"/>
+			</fileset>
+			<remove 
+				path="//:packageVersions" 
+			/>
+		</xmltask>
+		<xmltask todir="retrieveUnpackaged/triggers" ><!--failWithoutMatch="true" used for testing only-->
+			<fileset dir="retrieveUnpackaged/triggers">
+				<include name="*meta.xml"/>
+			</fileset>
+			<remove 
+				path="//:packageVersions" 
+			/>
+		</xmltask>
+	</target>
+</project>
