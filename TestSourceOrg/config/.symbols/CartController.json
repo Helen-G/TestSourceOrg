@@ -1,0 +1,1884 @@
+{
+    "properties": [
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "feeVOs", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 20, 
+                "line": 3
+            }, 
+            "type": "LIST"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "invoiceVOs", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 24, 
+                "line": 4
+            }, 
+            "type": "LIST"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "receiptVOs", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 24, 
+                "line": 5
+            }, 
+            "type": "LIST"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "cart", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 26, 
+                "line": 6
+            }, 
+            "type": "BGBK__Cart__c"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "rs", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 31, 
+                "line": 7
+            }, 
+            "type": "LIST"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "fees", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 27, 
+                "line": 8
+            }, 
+            "type": "LIST"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "invoices", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 28, 
+                "line": 9
+            }, 
+            "type": "LIST"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "a", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 20, 
+                "line": 11
+            }, 
+            "type": "Account"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "con", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 20, 
+                "line": 12
+            }, 
+            "type": "Contact"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "m_reconcileOriginalContact", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 15, 
+                "line": 13
+            }, 
+            "type": "Id"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "reconcileCart", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 26, 
+                "line": 14
+            }, 
+            "type": "BGBK__Cart__c"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "email", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 19, 
+                "line": 15
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "activeTab", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 19, 
+                "line": 16
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "totalSelected", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 20, 
+                "line": 17
+            }, 
+            "type": "Decimal"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "confirmMsg", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 19, 
+                "line": 18
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "parentLabel", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 19, 
+                "line": 19
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "isPortalUser", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 20, 
+                "line": 20
+            }, 
+            "type": "Boolean"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "monexaSessionKey", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 19, 
+                "line": 21
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "processSuccessful", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 20, 
+                "line": 22
+            }, 
+            "type": "Boolean"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "processResult", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 19, 
+                "line": 23
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "processResultCode", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 19, 
+                "line": 24
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "transactionId", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 19, 
+                "line": 25
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "processStatus", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 19, 
+                "line": 26
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "cardMasked", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 19, 
+                "line": 27
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "accountSelected", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 19, 
+                "line": 28
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "feeSelected", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 15, 
+                "line": 29
+            }, 
+            "type": "Id"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "canCreate", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 20, 
+                "line": 30
+            }, 
+            "type": "Boolean"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "canPayPartial", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 20, 
+                "line": 31
+            }, 
+            "type": "Boolean"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "canPayMulti", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 20, 
+                "line": 32
+            }, 
+            "type": "Boolean"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "canSelectReceipt", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 20, 
+                "line": 33
+            }, 
+            "type": "Boolean"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "itemsUnselected", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 19, 
+                "line": 34
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "feeIdsStr", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 19, 
+                "line": 35
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "currURL", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 19, 
+                "line": 36
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "payables", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 27, 
+                "line": 37
+            }, 
+            "type": "LIST"
+        }, 
+        {
+            "modifiers": [
+                "private"
+            ], 
+            "name": "m_cs", 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 30, 
+                "line": 38
+            }, 
+            "type": "CartService"
+        }, 
+        {
+            "modifiers": [
+                "private"
+            ], 
+            "name": "m_ps", 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 33, 
+                "line": 39
+            }, 
+            "type": "PaymentService"
+        }, 
+        {
+            "modifiers": [
+                "private"
+            ], 
+            "name": "m_rs", 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 33, 
+                "line": 40
+            }, 
+            "type": "ReceiptService"
+        }, 
+        {
+            "modifiers": [
+                "private"
+            ], 
+            "name": "gateway", 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 29, 
+                "line": 41
+            }, 
+            "type": "IPaymentGateway"
+        }, 
+        {
+            "modifiers": [
+                "private"
+            ], 
+            "name": "m_pid", 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 16, 
+                "line": 42
+            }, 
+            "type": "Id"
+        }, 
+        {
+            "modifiers": [
+                "private"
+            ], 
+            "name": "m_cartId", 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 16, 
+                "line": 43
+            }, 
+            "type": "Id"
+        }, 
+        {
+            "modifiers": [
+                "private"
+            ], 
+            "name": "m_invoiceId", 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 16, 
+                "line": 44
+            }, 
+            "type": "Id"
+        }, 
+        {
+            "modifiers": [
+                "private"
+            ], 
+            "name": "m_feeId", 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 16, 
+                "line": 45
+            }, 
+            "type": "Id"
+        }, 
+        {
+            "modifiers": [
+                "private"
+            ], 
+            "name": "m_selectedFees", 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 35, 
+                "line": 46
+            }, 
+            "type": "Map"
+        }, 
+        {
+            "modifiers": [
+                "private"
+            ], 
+            "name": "m_totalOwed", 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 21, 
+                "line": 47
+            }, 
+            "type": "Decimal"
+        }, 
+        {
+            "modifiers": [
+                "private"
+            ], 
+            "name": "m_settings", 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 35, 
+                "line": 48
+            }, 
+            "type": "BGBK__CartSettings__c"
+        }, 
+        {
+            "modifiers": [
+                "private"
+            ], 
+            "name": "m_retURL", 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 20, 
+                "line": 49
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "totalPayment", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 20, 
+                "line": 221
+            }, 
+            "type": "Decimal"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "pmtMethods", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 27, 
+                "line": 235
+            }, 
+            "type": "LIST"
+        }, 
+        {
+            "modifiers": [
+                "private"
+            ], 
+            "name": "m_accs", 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 23, 
+                "line": 274
+            }, 
+            "type": "LIST"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "accounts", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 31, 
+                "line": 275
+            }, 
+            "type": "LIST"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "totalBalance", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 20, 
+                "line": 535
+            }, 
+            "type": "Decimal"
+        }
+    ], 
+    "externalReferences": [], 
+    "innerClasses": [
+        {
+            "properties": [
+                {
+                    "modifiers": [
+                        "public"
+                    ], 
+                    "name": "f", 
+                    "visibility": "PUBLIC", 
+                    "references": [], 
+                    "location": {
+                        "column": 29, 
+                        "line": 702
+                    }, 
+                    "type": "MUSW__Fee__c"
+                }, 
+                {
+                    "modifiers": [
+                        "public"
+                    ], 
+                    "name": "isSelected", 
+                    "visibility": "PUBLIC", 
+                    "references": [], 
+                    "location": {
+                        "column": 24, 
+                        "line": 703
+                    }, 
+                    "type": "Boolean"
+                }, 
+                {
+                    "modifiers": [
+                        "public"
+                    ], 
+                    "name": "paymentAmount", 
+                    "visibility": "PUBLIC", 
+                    "references": [], 
+                    "location": {
+                        "column": 24, 
+                        "line": 704
+                    }, 
+                    "type": "Decimal"
+                }
+            ], 
+            "externalReferences": [], 
+            "innerClasses": [], 
+            "interfaces": [], 
+            "constructors": [
+                {
+                    "modifiers": [
+                        "public"
+                    ], 
+                    "name": "FeeVO", 
+                    "parameters": [
+                        {
+                            "type": "MUSW__Fee__c", 
+                            "name": "fee"
+                        }, 
+                        {
+                            "type": "Boolean", 
+                            "name": "sel"
+                        }
+                    ], 
+                    "visibility": "PUBLIC", 
+                    "references": [], 
+                    "location": {
+                        "column": 16, 
+                        "line": 705
+                    }, 
+                    "type": null
+                }
+            ], 
+            "namespace": null, 
+            "name": "FeeVO", 
+            "tableDeclaration": {
+                "type": "FeeVO", 
+                "modifiers": [
+                    "private"
+                ], 
+                "references": [], 
+                "location": {
+                    "column": 19, 
+                    "line": 700
+                }, 
+                "name": "FeeVO"
+            }, 
+            "key": null, 
+            "variables": [
+                {
+                    "type": "MUSW__Fee__c", 
+                    "modifiers": [], 
+                    "references": [], 
+                    "location": {
+                        "column": 35, 
+                        "line": 705
+                    }, 
+                    "name": "fee"
+                }, 
+                {
+                    "type": "Boolean", 
+                    "modifiers": [], 
+                    "references": [], 
+                    "location": {
+                        "column": 48, 
+                        "line": 705
+                    }, 
+                    "name": "sel"
+                }
+            ], 
+            "id": null, 
+            "methods": []
+        }, 
+        {
+            "properties": [
+                {
+                    "modifiers": [
+                        "public"
+                    ], 
+                    "name": "i", 
+                    "visibility": "PUBLIC", 
+                    "references": [], 
+                    "location": {
+                        "column": 30, 
+                        "line": 715
+                    }, 
+                    "type": "BGBK__Bill__c"
+                }, 
+                {
+                    "modifiers": [
+                        "public"
+                    ], 
+                    "name": "isSelected", 
+                    "visibility": "PUBLIC", 
+                    "references": [], 
+                    "location": {
+                        "column": 24, 
+                        "line": 716
+                    }, 
+                    "type": "Boolean"
+                }
+            ], 
+            "externalReferences": [], 
+            "innerClasses": [], 
+            "interfaces": [], 
+            "constructors": [
+                {
+                    "modifiers": [
+                        "public"
+                    ], 
+                    "name": "InvoiceVO", 
+                    "parameters": [
+                        {
+                            "type": "BGBK__Bill__c", 
+                            "name": "inv"
+                        }
+                    ], 
+                    "visibility": "PUBLIC", 
+                    "references": [], 
+                    "location": {
+                        "column": 16, 
+                        "line": 717
+                    }, 
+                    "type": null
+                }
+            ], 
+            "namespace": null, 
+            "name": "InvoiceVO", 
+            "tableDeclaration": {
+                "type": "InvoiceVO", 
+                "modifiers": [
+                    "private"
+                ], 
+                "references": [], 
+                "location": {
+                    "column": 19, 
+                    "line": 713
+                }, 
+                "name": "InvoiceVO"
+            }, 
+            "key": null, 
+            "variables": [
+                {
+                    "type": "BGBK__Bill__c", 
+                    "modifiers": [], 
+                    "references": [], 
+                    "location": {
+                        "column": 40, 
+                        "line": 717
+                    }, 
+                    "name": "inv"
+                }
+            ], 
+            "id": null, 
+            "methods": []
+        }, 
+        {
+            "properties": [
+                {
+                    "modifiers": [
+                        "public"
+                    ], 
+                    "name": "r", 
+                    "visibility": "PUBLIC", 
+                    "references": [], 
+                    "location": {
+                        "column": 33, 
+                        "line": 726
+                    }, 
+                    "type": "MUSW__Receipt__c"
+                }, 
+                {
+                    "modifiers": [
+                        "public"
+                    ], 
+                    "name": "amount", 
+                    "visibility": "PUBLIC", 
+                    "references": [], 
+                    "location": {
+                        "column": 24, 
+                        "line": 727
+                    }, 
+                    "type": "Decimal"
+                }, 
+                {
+                    "modifiers": [
+                        "public"
+                    ], 
+                    "name": "existingPmt", 
+                    "visibility": "PUBLIC", 
+                    "references": [], 
+                    "location": {
+                        "column": 33, 
+                        "line": 728
+                    }, 
+                    "type": "BGBK__Payment__c"
+                }, 
+                {
+                    "modifiers": [
+                        "private"
+                    ], 
+                    "name": "m_rs", 
+                    "visibility": "PRIVATE", 
+                    "references": [], 
+                    "location": {
+                        "column": 37, 
+                        "line": 729
+                    }, 
+                    "type": "ReceiptService"
+                }, 
+                {
+                    "modifiers": [
+                        "private"
+                    ], 
+                    "name": "m_backR", 
+                    "visibility": "PRIVATE", 
+                    "references": [], 
+                    "location": {
+                        "column": 34, 
+                        "line": 730
+                    }, 
+                    "type": "MUSW__Receipt__c"
+                }, 
+                {
+                    "modifiers": [
+                        "public"
+                    ], 
+                    "name": "pmtMethodSelected", 
+                    "visibility": "PUBLIC", 
+                    "references": [], 
+                    "location": {
+                        "column": 23, 
+                        "line": 743
+                    }, 
+                    "type": "String"
+                }
+            ], 
+            "externalReferences": [], 
+            "innerClasses": [], 
+            "interfaces": [], 
+            "constructors": [
+                {
+                    "modifiers": [
+                        "public"
+                    ], 
+                    "name": "ReceiptVO", 
+                    "parameters": [
+                        {
+                            "type": "MUSW__Receipt__c", 
+                            "name": "rec"
+                        }, 
+                        {
+                            "type": "Decimal", 
+                            "name": "amt"
+                        }, 
+                        {
+                            "type": "ReceiptService", 
+                            "name": "rsvc"
+                        }
+                    ], 
+                    "visibility": "PUBLIC", 
+                    "references": [], 
+                    "location": {
+                        "column": 16, 
+                        "line": 732
+                    }, 
+                    "type": null
+                }
+            ], 
+            "namespace": null, 
+            "name": "ReceiptVO", 
+            "tableDeclaration": {
+                "type": "ReceiptVO", 
+                "modifiers": [
+                    "private"
+                ], 
+                "references": [], 
+                "location": {
+                    "column": 19, 
+                    "line": 724
+                }, 
+                "name": "ReceiptVO"
+            }, 
+            "key": null, 
+            "variables": [
+                {
+                    "type": "MUSW__Receipt__c", 
+                    "modifiers": [], 
+                    "references": [], 
+                    "location": {
+                        "column": 43, 
+                        "line": 732
+                    }, 
+                    "name": "rec"
+                }, 
+                {
+                    "type": "Decimal", 
+                    "modifiers": [], 
+                    "references": [], 
+                    "location": {
+                        "column": 56, 
+                        "line": 732
+                    }, 
+                    "name": "amt"
+                }, 
+                {
+                    "type": "ReceiptService", 
+                    "modifiers": [], 
+                    "references": [], 
+                    "location": {
+                        "column": 81, 
+                        "line": 732
+                    }, 
+                    "name": "rsvc"
+                }
+            ], 
+            "id": null, 
+            "methods": []
+        }
+    ], 
+    "interfaces": [], 
+    "constructors": [
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "CartController", 
+            "parameters": [
+                {
+                    "type": "StandardSetController", 
+                    "name": "c"
+                }
+            ], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 12, 
+                "line": 51
+            }, 
+            "type": null
+        }
+    ], 
+    "namespace": null, 
+    "name": "CartController", 
+    "tableDeclaration": {
+        "type": "CartController", 
+        "modifiers": [
+            "public", 
+            "with sharing"
+        ], 
+        "references": [], 
+        "location": {
+            "column": 27, 
+            "line": 1
+        }, 
+        "name": "CartController"
+    }, 
+    "key": "01p61000005Jn9nAAC", 
+    "variables": [
+        {
+            "type": "StandardSetController", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 59, 
+                "line": 51
+            }, 
+            "name": "c"
+        }, 
+        {
+            "type": "BGBK__Bill__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 27, 
+                "line": 72
+            }, 
+            "name": "inv"
+        }, 
+        {
+            "type": "Set", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 17, 
+                "line": 145
+            }, 
+            "name": "feesToRemove"
+        }, 
+        {
+            "type": "Map", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 32, 
+                "line": 146
+            }, 
+            "name": "invoicesToAdd"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 16, 
+                "line": 147
+            }, 
+            "name": "invoicedFees"
+        }, 
+        {
+            "type": "MUSW__Fee__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 27, 
+                "line": 148
+            }, 
+            "name": "f"
+        }, 
+        {
+            "type": "Message", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 31, 
+                "line": 168
+            }, 
+            "name": "myMsg"
+        }, 
+        {
+            "type": "MUSW__Fee__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 27, 
+                "line": 174
+            }, 
+            "name": "f"
+        }, 
+        {
+            "type": "Boolean", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 21, 
+                "line": 176
+            }, 
+            "name": "selected"
+        }, 
+        {
+            "type": "BGBK__Bill__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 28, 
+                "line": 188
+            }, 
+            "name": "i"
+        }, 
+        {
+            "type": "Decimal", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 21, 
+                "line": 225
+            }, 
+            "name": "total"
+        }, 
+        {
+            "type": "ReceiptVO", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 28, 
+                "line": 226
+            }, 
+            "name": "rvo"
+        }, 
+        {
+            "type": "PicklistEntry", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 39, 
+                "line": 240
+            }, 
+            "name": "pe"
+        }, 
+        {
+            "type": "Account", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 30, 
+                "line": 283
+            }, 
+            "name": "acc"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 28, 
+                "line": 286
+            }, 
+            "name": "addr"
+        }, 
+        {
+            "type": "Account", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 22, 
+                "line": 303
+            }, 
+            "name": "acc"
+        }, 
+        {
+            "type": "Message", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 31, 
+                "line": 317
+            }, 
+            "name": "myMsg"
+        }, 
+        {
+            "type": "Message", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 31, 
+                "line": 324
+            }, 
+            "name": "myMsg"
+        }, 
+        {
+            "type": "Integer", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 22, 
+                "line": 335
+            }, 
+            "name": "i"
+        }, 
+        {
+            "type": "FeeVO", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 24, 
+                "line": 337
+            }, 
+            "name": "feeVo"
+        }, 
+        {
+            "type": "Integer", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 22, 
+                "line": 347
+            }, 
+            "name": "i"
+        }, 
+        {
+            "type": "InvoiceVO", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 28, 
+                "line": 349
+            }, 
+            "name": "invVo"
+        }, 
+        {
+            "type": "Message", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 31, 
+                "line": 370
+            }, 
+            "name": "myMsg"
+        }, 
+        {
+            "type": "Message", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 27, 
+                "line": 376
+            }, 
+            "name": "myMsg"
+        }, 
+        {
+            "type": "Id", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 12, 
+                "line": 402
+            }, 
+            "name": "conId"
+        }, 
+        {
+            "type": "MUSW__Receipt__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 26, 
+                "line": 403
+            }, 
+            "name": "r"
+        }, 
+        {
+            "type": "ReceiptVO", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 19, 
+                "line": 405
+            }, 
+            "name": "newReceiptVO"
+        }, 
+        {
+            "type": "FeeVO", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 20, 
+                "line": 414
+            }, 
+            "name": "fvo"
+        }, 
+        {
+            "type": "InvoiceVO", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 24, 
+                "line": 415
+            }, 
+            "name": "ivo"
+        }, 
+        {
+            "type": "Decimal", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 17, 
+                "line": 433
+            }, 
+            "name": "tatalReceipt"
+        }, 
+        {
+            "type": "ReceiptVO", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 24, 
+                "line": 434
+            }, 
+            "name": "rvo"
+        }, 
+        {
+            "type": "Map", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 40, 
+                "line": 474
+            }, 
+            "name": "rsAmt"
+        }, 
+        {
+            "type": "ReceiptVO", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 24, 
+                "line": 475
+            }, 
+            "name": "rvo"
+        }, 
+        {
+            "type": "MUSW__Receipt__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 30, 
+                "line": 477
+            }, 
+            "name": "receipt"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 14, 
+                "line": 516
+            }, 
+            "name": "feeIds"
+        }, 
+        {
+            "type": "PageReference", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 24, 
+                "line": 525
+            }, 
+            "name": "pr"
+        }, 
+        {
+            "type": "Decimal", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 21, 
+                "line": 539
+            }, 
+            "name": "totalr"
+        }, 
+        {
+            "type": "ReceiptVO", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 28, 
+                "line": 540
+            }, 
+            "name": "rvo"
+        }, 
+        {
+            "type": "Decimal", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 25, 
+                "line": 542
+            }, 
+            "name": "ramt"
+        }, 
+        {
+            "type": "FeeVO", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 20, 
+                "line": 556
+            }, 
+            "name": "feeVo"
+        }, 
+        {
+            "type": "InvoiceVO", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 24, 
+                "line": 561
+            }, 
+            "name": "invVo"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 23, 
+                "line": 600
+            }, 
+            "name": "updateFees"
+        }, 
+        {
+            "type": "FeeVO", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 18, 
+                "line": 601
+            }, 
+            "name": "fvo"
+        }, 
+        {
+            "type": "MUSW__Fee__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 25, 
+                "line": 603
+            }, 
+            "name": "fee"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 24, 
+                "line": 608
+            }, 
+            "name": "updateInvoices"
+        }, 
+        {
+            "type": "InvoiceVO", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 22, 
+                "line": 609
+            }, 
+            "name": "ivo"
+        }, 
+        {
+            "type": "BGBK__Bill__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 26, 
+                "line": 611
+            }, 
+            "name": "invoice"
+        }, 
+        {
+            "type": "PageReference", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 23, 
+                "line": 623
+            }, 
+            "name": "pr"
+        }, 
+        {
+            "type": "Id", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 54, 
+                "line": 640
+            }, 
+            "name": "contactId"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 25, 
+                "line": 642
+            }, 
+            "name": "cs"
+        }, 
+        {
+            "type": "FeeVO", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 20, 
+                "line": 649
+            }, 
+            "name": "feeVo"
+        }, 
+        {
+            "type": "Decimal", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 25, 
+                "line": 665
+            }, 
+            "name": "paymentAmount"
+        }, 
+        {
+            "type": "InvoiceVO", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 24, 
+                "line": 672
+            }, 
+            "name": "invVo"
+        }, 
+        {
+            "type": "PageReference", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 23, 
+                "line": 683
+            }, 
+            "name": "pr"
+        }
+    ], 
+    "id": "01p61000005Jn9nAAC", 
+    "methods": [
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "initOrder", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 17, 
+                "line": 112
+            }, 
+            "returnType": "void", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "accountChanged", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 17, 
+                "line": 301
+            }, 
+            "returnType": "void", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "checkout", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 17, 
+                "line": 313
+            }, 
+            "returnType": "void", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "review", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 17, 
+                "line": 366
+            }, 
+            "returnType": "void", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "addReceipt", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 17, 
+                "line": 398
+            }, 
+            "returnType": "void", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "preparePayables", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 18, 
+                "line": 410
+            }, 
+            "returnType": "void", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "process", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 17, 
+                "line": 419
+            }, 
+            "returnType": "void", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "sendPdf", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 17, 
+                "line": 512
+            }, 
+            "returnType": "void", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "abandon", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 26, 
+                "line": 522
+            }, 
+            "returnType": "PageReference", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "cancel", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 26, 
+                "line": 530
+            }, 
+            "returnType": "PageReference", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "refreshTotal", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 17, 
+                "line": 554
+            }, 
+            "returnType": "void", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "refreshTotalAndCheckout", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 17, 
+                "line": 574
+            }, 
+            "returnType": "void", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "contactChanged", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 17, 
+                "line": 583
+            }, 
+            "returnType": "void", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "doReconcile", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 26, 
+                "line": 597
+            }, 
+            "returnType": "PageReference", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "cancelReconcile", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 26, 
+                "line": 632
+            }, 
+            "returnType": "PageReference", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "private"
+            ], 
+            "name": "findActiveCartByContact", 
+            "parameters": [
+                {
+                    "type": "Id", 
+                    "name": "contactId"
+                }
+            ], 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 27, 
+                "line": 640
+            }, 
+            "returnType": "BGBK__Cart__c", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "private"
+            ], 
+            "name": "updateTotal", 
+            "parameters": [], 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 18, 
+                "line": 646
+            }, 
+            "returnType": "void", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "private"
+            ], 
+            "name": "getPageReference", 
+            "parameters": [], 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 27, 
+                "line": 681
+            }, 
+            "returnType": "PageReference", 
+            "type": null
+        }
+    ]
+}

@@ -1,5 +1,0 @@
-<apex:component controller="MUSW.ReportEmailController" access="global">
-    <apex:attribute name="reportName" description="Report Name" type="String" assignTo="{!rptName}" access="global"/>
-    <apex:attribute name="reportParams" description="Report Parameters" type="String" assignTo="{!rptParams}" access="global"/>
-    <apex:outputText value="{!ReportAsCSVStream}" escape="false"/>
-</apex:component>
