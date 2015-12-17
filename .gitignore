@@ -4,9 +4,8 @@
 *.sublime-workspace
 resource-bundles/
 apex-scripts/
-config/
+config/*
 *.ini
-config/
 *.sublime-project
 *.sublime-settings
 *.sublime-workspace
