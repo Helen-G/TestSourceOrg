@@ -1,1 +1,14 @@
-config/
+.metadata
+*.sublime-project
+*.sublime-settings
+*.sublime-workspace
+resource-bundles/
+apex-scripts/
+config/*
+*.ini
+*.sublime-project
+*.sublime-settings
+*.sublime-workspace
+resource-bundles/
+TestSourceOrg/config/.local_store
+TestSourceOrg/config/.local_store
