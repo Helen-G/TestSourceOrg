@@ -1,1 +1,8 @@
 .metadata
+*.sublime-project
+*.sublime-settings
+*.sublime-workspace
+resource-bundles/
+apex-scripts/
+config/
+*.ini
