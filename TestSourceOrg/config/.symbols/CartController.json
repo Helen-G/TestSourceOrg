@@ -95,6 +95,19 @@
             "modifiers": [
                 "public"
             ], 
+            "name": "zebra", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 28, 
+                "line": 10
+            }, 
+            "type": "LIST"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
             "name": "a", 
             "visibility": "PUBLIC", 
             "references": [], 
