@@ -6,3 +6,8 @@ resource-bundles/
 apex-scripts/
 config/
 *.ini
+TestSourceOrg/config/
+*.sublime-project
+*.sublime-settings
+*.sublime-workspace
+resource-bundles/
